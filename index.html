@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1114">
+<meta name="description" content="Wetter, Regenradar und Luftqualität für Basel. Freie Daten, kein Konto, kein Tracking.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Wetter Basel">
+<title>Wetter Basel</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="ort">BASEL</div>
+    <div class="koord">47.56° N &nbsp; 7.59° O &nbsp; 260 m</div>
+  </div>
+  <div>
+    <div class="uhr" id="uhr">–––</div>
+    <div class="datum" id="datum"></div>
+  </div>
+</header>
+
+<div class="altbanner" id="altbanner" hidden></div>
+
+<div class="jetzt" id="jetzt"><div class="laedt">Daten werden geladen …</div></div>
+
+<section>
+  <h2>Stunde für Stunde
+    <span class="tagwahl">
+      <button id="tag-heute" aria-pressed="true">HEUTE</button>
+      <button id="tag-morgen" aria-pressed="false">MORGEN</button>
+    </span>
+  </h2>
+  <div class="stundenkopf">
+    <i>UHR</i><i></i><i>°C</i><i>NIEDERSCHLAG</i><i class="r">KM/H</i>
+  </div>
+  <div class="stunden" id="stunden"><div class="laedt">…</div></div>
+</section>
+
+<section>
+  <h2>Regenradar <em>RainViewer</em></h2>
+  <div class="nowcast-satz" id="nowcast-satz"></div>
+  <div id="nowcast-strip"></div>
+  <div class="abstand"></div>
+  <div id="karte"></div>
+  <div class="radar-zoomwahl">
+    <button id="z-stadt" aria-pressed="true">STADT</button>
+    <button id="z-region" aria-pressed="false">REGION</button>
+    <button id="z-weit" aria-pressed="false">WEIT</button>
+  </div>
+  <div class="radar-steuerung">
+    <button class="spiel" id="spiel" aria-label="Radar abspielen">▶</button>
+    <input type="range" id="schieber" min="0" max="0" value="0" aria-label="Radarbild wählen">
+    <div class="zeitmarke" id="zeitmarke">–<i>&nbsp;</i></div>
+  </div>
+  <div class="radar-legende">
+    <span>leicht</span><span class="verlauf"></span><span>heftig</span>
+  </div>
+</section>
+
+<details>
+  <summary>NÄCHSTE 36 STUNDEN <em id="spanne-hinweis"></em></summary>
+  <div class="inhalt">
+    <div class="ablesung" id="ablesung"></div>
+    <div id="kurvenfeld"></div>
+  </div>
+</details>
+
+<details open>
+  <summary>SIEBEN TAGE <em>min – max °C</em></summary>
+  <div class="inhalt"><div class="tage" id="tage"></div></div>
+</details>
+
+<details>
+  <summary>SONNE UND MOND <em id="sonne-hinweis"></em></summary>
+  <div class="inhalt">
+    <div class="himmel">
+      <div id="sonne"></div>
+      <div id="mond"></div>
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary>LUFTQUALITÄT <em id="luft-hinweis"></em></summary>
+  <div class="inhalt"><div id="luft"></div></div>
+</details>
+
+<footer>
+  <div id="stand">–</div>
+  <div>Daten: Open-Meteo (DWD ICON, CAMS, GloFAS), Radar von RainViewer, Karte
+    <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> und Esri.
+    Kein Konto, kein Schlüssel, kein eigener Server — der Browser fragt direkt an.</div>
+  <button id="neu">Neu laden</button>
+</footer>
+
+<script src="vendor/leaflet/leaflet.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
