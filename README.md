@@ -1,4 +1,14 @@
+<!-- BEGIN public-repo-header -->
+<div align="center">
+
 # Wetter Basel
+
+<a href="https://github.com/blackmath88/wetter-basel"><img alt="Primary language: HTML" src="https://img.shields.io/badge/language-HTML-526078?style=flat"></a>
+<a href="https://github.com/blackmath88/wetter-basel#readme"><img alt="README" src="https://img.shields.io/badge/docs-readme-16796f?style=flat"></a>
+<a href="https://github.com/blackmath88/wetter-basel/commits/main"><img alt="Last commit" src="https://img.shields.io/github/last-commit/blackmath88/wetter-basel?style=flat&amp;color=737373"></a>
+
+</div>
+<!-- END public-repo-header -->
 
 Eine kleine Wetter-PWA für Basel. Morgens aufmachen, Stunde für Stunde lesen,
 Regenradar prüfen, weitergehen.
